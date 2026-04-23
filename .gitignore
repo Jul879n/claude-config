@@ -1,0 +1,35 @@
+# Secretos y estado local
+settings.local.json
+mcp-needs-auth-cache.json
+history.jsonl
+stats-cache.json
+install-counts-cache.json
+blocklist.json
+*.oauth
+*.token
+.env
+
+# Datos temporales
+cache/
+sessions/
+projects/
+shell-snapshots/
+paste-cache/
+image-cache/
+file-history/
+session-env/
+debug/
+telemetry/
+usage-data/
+downloads/
+backups/
+ide/
+
+# Datos personales que NO se versionan
+plans/
+agent-memory/
+todos/
+tasks/
+
+# macOS
+.DS_Store

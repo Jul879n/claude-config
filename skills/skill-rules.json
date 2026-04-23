@@ -1,0 +1,148 @@
+{
+  "skills": {
+    "concise-output": {
+      "enforcement": "critical",
+      "priority": "critical",
+      "description": "Mantener respuestas cortas y directas",
+      "promptTriggers": {
+        "keywords": ["*"],
+        "intentPatterns": [".*"]
+      }
+    },
+    "brainstorming": {
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Antes de nueva feature, componente o trabajo creativo",
+      "promptTriggers": {
+        "keywords": ["crear", "nuevo", "feature", "implementar", "diseñar", "build", "implement", "new", "feature"],
+        "intentPatterns": ["(crear|implementar|build|diseñar).*?(feature|componente|funcionalidad)", "nuevo.*?(proyecto|componente|feature)"]
+      }
+    },
+    "dispatching-parallel-agents": {
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Cuando hay 2+ tareas independientes",
+      "promptTriggers": {
+        "keywords": ["paralelo", "multiples", "varios", "simultaneo", "parallel", "multiple", "several"],
+        "intentPatterns": ["(hacer|ejecutar|implementar).*?(y|tambien|ademas).*?(tarea|feature)", "(varios|multiples).*?tasks"]
+      }
+    },
+    "find-skills": {
+      "enforcement": "suggest",
+      "priority": "medium",
+      "description": "Cuando usuario pregunta cómo hacer algo que podría tener skill",
+      "promptTriggers": {
+        "keywords": ["como puedo", "como hacer", "how to", "how can", "existe skill", "hay skill", "se puede"],
+        "intentPatterns": ["(como|cómo).*(hacer|hacer)", "(existe|hay).*?(skill|plugin)"]
+      }
+    },
+    "model-selector": {
+      "enforcement": "suggest",
+      "priority": "medium",
+      "description": "Elegir modelo correcto según complejidad",
+      "promptTriggers": {
+        "keywords": ["complejo", "simple", "rapido", "complex", "simple", "fast", "basico"],
+        "intentPatterns": [".*"]
+      }
+    },
+    "planning-with-files": {
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Para tareas complejas >5 tool calls",
+      "promptTriggers": {
+        "keywords": ["plan", "planificar", "complejo", "multiples pasos", "plan", "complex", "multi-step"],
+        "intentPatterns": ["(planificar|plan).*?(tarea|trabajo|implementacion)", "(complejo|complex).*?(tarea|feature)", "tarea.*?compleja"]
+      }
+    },
+    "realistic-testing": {
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Tests reales con datos reales, no mocks",
+      "promptTriggers": {
+        "keywords": ["test", "tests", "testing", "prueba", "pruebas", "spec"],
+        "intentPatterns": ["(escribir|crear|hacer).*?test", "test.*?(unit|integration|e2e)", "prueba.*?(unitaria|integracion)"]
+      }
+    },
+    "reposynapse-explore": {
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Explorar codebase con reposynapse MCP",
+      "promptTriggers": {
+        "keywords": ["explorar", "buscar", "encontrar", "busca", "explore", "search", "find", "donde esta", "where is"],
+        "intentPatterns": ["(buscar|explorar|encontrar).*?(codigo|archivo|funcion|clase)", "donde.*?(esta|está)", "(search|find).*?(in|code)"]
+      }
+    },
+    "verification": {
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Verificar que código funciona después de cambios",
+      "promptTriggers": {
+        "keywords": ["verificar", "probar", "testear", "verifica", "verify", "test", "check", "funciona"],
+        "intentPatterns": ["(verificar|probar).*?(codigo|funciona|implementacion)", "funciona.*?(correcto|bien)", "(verify|check).*?(code|works)"]
+      }
+    },
+    "simplify": {
+      "enforcement": "suggest",
+      "priority": "medium",
+      "description": "Simplificar/refactorizar archivos grandes",
+      "promptTriggers": {
+        "keywords": ["simplificar", "refactorizar", "refactor", "large", "grande", "complejo"],
+        "intentPatterns": ["(simplificar|refactorizar).*?(archivo|codigo)", "archivo.*?grande", "codigo.*?(complejo|grande)"]
+      }
+    },
+    "systematic-debugging": {
+      "enforcement": "suggest",
+      "priority": "critical",
+      "description": "Antes de proponer fixes, investigar causa raíz",
+      "promptTriggers": {
+        "keywords": ["bug", "error", "falla", "fix", "problema", "issue", "broken", "crash"],
+        "intentPatterns": ["(fix|arreglar|resolver).*?(bug|error|problema)", "no.*?funciona", "error.*?(en|when)", "(debug|debugging).*"]
+      }
+    },
+    "test-driven-development": {
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Antes de implementar feature, escribir tests primero",
+      "promptTriggers": {
+        "keywords": ["tdd", "test first", "test driven", "escribir test"],
+        "intentPatterns": ["(test|tests).*?(first|primero)", "antes.*?test", "escribir.*?test.*?antes"]
+      }
+    },
+    "writing-plans": {
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Antes de código, crear plan/especificación",
+      "promptTriggers": {
+        "keywords": ["plan", "spec", "especificacion", "specification", "requerimientos"],
+        "intentPatterns": ["(crear|escribir).*?(plan|spec|especificacion)", "antes.*?implementar"]
+      }
+    },
+    "requesting-code-review": {
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Antes de merge, solicitar code review",
+      "promptTriggers": {
+        "keywords": ["review", "pr", "merge", "pull request", "code review"],
+        "intentPatterns": ["(solicitar|hacer).*?(code review|pr)", "listo.*?para.*?(merge|pr)", "acabado.*?(feature|implementacion)"]
+      }
+    },
+    "receiving-code-review": {
+      "enforcement": "suggest",
+      "priority": "high",
+      "description": "Recibir feedback de code review con rigor técnico",
+      "promptTriggers": {
+        "keywords": ["feedback", "review comments", "comentarios", "changes requested", "approva"],
+        "intentPatterns": ["(recibir|tener).*?(feedback|review|comentarios)", "cambios.*?solicitados"]
+      }
+    },
+    "finishing-a-development-branch": {
+      "enforcement": "suggest",
+      "priority": "medium",
+      "description": "Cuando implementación está completa, decidir integración",
+      "promptTriggers": {
+        "keywords": ["completo", "listo", "finished", "done", "terminado", "finalizar"],
+        "intentPatterns": ["(implementacion|feature).*?(completa|lista|terminada)", "listo.*?para.*?(merge|pr)"]
+      }
+    }
+  }
+}
