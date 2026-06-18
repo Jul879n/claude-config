@@ -26,20 +26,12 @@
       "mcp__reposynapse__batch_rename",
       "mcp__reposynapse__remove_dead_code",
       "mcp__reposynapse__get_complexity"
-    ]
+    ],
+    "defaultMode": "auto"
   },
   "model": "opusplan",
   "hooks": {
     "Notification": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.vibe-island/bin/vibe-island-bridge --source claude"
-          }
-        ]
-      },
       {
         "matcher": "",
         "hooks": [
@@ -52,16 +44,6 @@
       }
     ],
     "PermissionRequest": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.vibe-island/bin/vibe-island-bridge --source claude",
-            "timeout": 86400
-          }
-        ]
-      },
       {
         "matcher": "",
         "hooks": [
@@ -85,15 +67,6 @@
         ]
       },
       {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.vibe-island/bin/vibe-island-bridge --source claude"
-          }
-        ]
-      },
-      {
         "matcher": "",
         "hooks": [
           {
@@ -104,26 +77,8 @@
         ]
       }
     ],
-    "PreCompact": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.vibe-island/bin/vibe-island-bridge --source claude"
-          }
-        ]
-      }
-    ],
+    "PreCompact": [],
     "PreToolUse": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.vibe-island/bin/vibe-island-bridge --source claude"
-          }
-        ]
-      },
       {
         "matcher": "",
         "hooks": [
@@ -136,14 +91,6 @@
       }
     ],
     "SessionEnd": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.vibe-island/bin/vibe-island-bridge --source claude"
-          }
-        ]
-      },
       {
         "matcher": "",
         "hooks": [
@@ -160,15 +107,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HOME/.vibe-island/bin/vibe-island-bridge --source claude"
-          }
-        ]
-      },
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "echo '{\"hookSpecificOutput\": {\"hookEventName\": \"SessionStart\", \"additionalContext\": \"Active skills — apply automatically without being asked: (1) brainstorming: before any new feature, component, or creative work; (2) concise-output: keep responses short and direct; (3) dispatching-parallel-agents: when 2+ tasks are independent, run them in parallel; (4) find-skills: when user asks how to do something that might have a skill; (5) model-selector: choose the right Claude model for task complexity; (6) planning-with-files: for complex tasks requiring >5 tool calls, create a plan file first; (7) realistic-testing: prefer real tests with real data over mocks; (8) reposynapse-explore: use reposynapse MCP tools first when exploring the codebase; (9) verification: after code changes, verify they work.\"}}'",
+            "command": "echo '{\"hookSpecificOutput\": {\"hookEventName\": \"SessionStart\", \"additionalContext\": \"**SUPERPOWERS PLUGIN ACTIVE:** superpowers@claude-plugins-official is loaded. You MUST invoke the Skill tool with skill=\\\"superpowers:using-superpowers\\\" before ANY response in this session — it defines how to find and use all other skills. Active skills — apply automatically without being asked: (1) brainstorming: before any new feature, component, or creative work; (2) concise-output: keep responses short and direct; (3) dispatching-parallel-agents: when 2+ tasks are independent, run them in parallel; (4) find-skills: when user asks how to do something that might have a skill; (5) model-selector: choose the right Claude model for task complexity; (6) planning-with-files: for complex tasks requiring >5 tool calls, create a plan file first; (7) realistic-testing: prefer real tests with real data over mocks; (8) reposynapse-explore: use reposynapse MCP tools first when exploring the codebase; (9) verification: after code changes, verify they work; (10) codigo-minimo: before writing any code, walk the minimum-code ladder (YAGNI → stdlib → native → installed dep → existing component → one line → minimum that works); never cut security, accessibility, or real error handling. TASK TRACKING (mandatory): For any task requiring more than 1 tool call, use TaskCreate to create tasks before starting, TaskUpdate to mark them in_progress as you begin each one, and TaskUpdate to mark them completed immediately when done. Keep the task list visible and current at all times — never batch completions at the end.\"}}'",
             "statusMessage": "Cargando skills de sesión..."
           }
         ]
@@ -186,14 +125,6 @@
     ],
     "Stop": [
       {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.vibe-island/bin/vibe-island-bridge --source claude"
-          }
-        ]
-      },
-      {
         "matcher": "",
         "hooks": [
           {
@@ -206,14 +137,6 @@
     ],
     "SubagentStart": [
       {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.vibe-island/bin/vibe-island-bridge --source claude"
-          }
-        ]
-      },
-      {
         "matcher": "",
         "hooks": [
           {
@@ -225,14 +148,6 @@
       }
     ],
     "SubagentStop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.vibe-island/bin/vibe-island-bridge --source claude"
-          }
-        ]
-      },
       {
         "matcher": "",
         "hooks": [
@@ -250,14 +165,6 @@
           {
             "type": "command",
             "command": "$HOME/.claude/hooks/SkillActivationHook/skill-activation-prompt.sh"
-          }
-        ]
-      },
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.vibe-island/bin/vibe-island-bridge --source claude"
           }
         ]
       },
@@ -291,17 +198,12 @@
   },
   "enabledPlugins": {
     "context7@claude-plugins-official": true,
-    "miskills@miskills-marketplace": true,
     "skill-creator@claude-plugins-official": true,
-    "warp@claude-code-warp": true
+    "frontend-design@claude-plugins-official": true,
+    "warp@claude-code-warp": true,
+    "superpowers@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
-    "miskills-marketplace": {
-      "source": {
-        "source": "directory",
-        "path": "$HOME/.claude/plugins/marketplaces/miskills-marketplace"
-      }
-    },
     "claude-code-warp": {
       "source": {
         "source": "github",
@@ -309,6 +211,11 @@
       }
     }
   },
-  "language": "Español",
-  "effortLevel": "medium"
+  "language": "español chileno formal, sin groserías",
+  "effortLevel": "medium",
+  "tui": "default",
+  "skipWorkflowUsageWarning": true,
+  "todoFeatureEnabled": true,
+  "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true
 }

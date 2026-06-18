@@ -1,4 +1,4 @@
-# Memory Index
+# Global Memory
 
-- [UI visual iteration workflow](feedback_ui_visual_iteration.md) — Ask for exact end state before writing UI/CSS code; avoid speculative multi-approach attempts
-- [Bug fix and multi-file change workflow](feedback_bug_fix_workflow.md) — Start at specified file/function for bugs; always plan before multi-file changes
+## Referencias
+- [reposynapse MCP — Estrategia de tokens y reglas de uso](reference_reposynapse.md) — Tabla de herramientas reposynapse, flujo óptimo de exploración y reglas obligatorias de uso (aplica a todos los proyectos)
