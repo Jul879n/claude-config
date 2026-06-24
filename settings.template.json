@@ -31,30 +31,8 @@
   },
   "model": "opusplan",
   "hooks": {
-    "Notification": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"$HOME/.pixel-agents/hooks/claude-hook.js\"",
-            "timeout": 5
-          }
-        ]
-      }
-    ],
-    "PermissionRequest": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"$HOME/.pixel-agents/hooks/claude-hook.js\"",
-            "timeout": 5
-          }
-        ]
-      }
-    ],
+    "Notification": [],
+    "PermissionRequest": [],
     "PostToolUse": [
       {
         "matcher": "Write|Edit",
@@ -65,43 +43,11 @@
             "statusMessage": "Type-check after edits"
           }
         ]
-      },
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"$HOME/.pixel-agents/hooks/claude-hook.js\"",
-            "timeout": 5
-          }
-        ]
       }
     ],
     "PreCompact": [],
-    "PreToolUse": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"$HOME/.pixel-agents/hooks/claude-hook.js\"",
-            "timeout": 5
-          }
-        ]
-      }
-    ],
-    "SessionEnd": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"$HOME/.pixel-agents/hooks/claude-hook.js\"",
-            "timeout": 5
-          }
-        ]
-      }
-    ],
+    "PreToolUse": [],
+    "SessionEnd": [],
     "SessionStart": [
       {
         "hooks": [
@@ -111,54 +57,11 @@
             "statusMessage": "Cargando skills de sesión..."
           }
         ]
-      },
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"$HOME/.pixel-agents/hooks/claude-hook.js\"",
-            "timeout": 5
-          }
-        ]
       }
     ],
-    "Stop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"$HOME/.pixel-agents/hooks/claude-hook.js\"",
-            "timeout": 5
-          }
-        ]
-      }
-    ],
-    "SubagentStart": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"$HOME/.pixel-agents/hooks/claude-hook.js\"",
-            "timeout": 5
-          }
-        ]
-      }
-    ],
-    "SubagentStop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"$HOME/.pixel-agents/hooks/claude-hook.js\"",
-            "timeout": 5
-          }
-        ]
-      }
-    ],
+    "Stop": [],
+    "SubagentStart": [],
+    "SubagentStop": [],
     "UserPromptSubmit": [
       {
         "hooks": [
@@ -167,30 +70,9 @@
             "command": "$HOME/.claude/hooks/SkillActivationHook/skill-activation-prompt.sh"
           }
         ]
-      },
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"$HOME/.pixel-agents/hooks/claude-hook.js\"",
-            "timeout": 5
-          }
-        ]
       }
     ],
-    "PostToolUseFailure": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"$HOME/.pixel-agents/hooks/claude-hook.js\"",
-            "timeout": 5
-          }
-        ]
-      }
-    ]
+    "PostToolUseFailure": []
   },
   "statusLine": {
     "type": "command",

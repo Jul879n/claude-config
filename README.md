@@ -37,12 +37,9 @@ Luego sigue los pasos manuales que imprime el script.
 ## Pasos manuales post-instalación
 
 1. **`claude login`** — autenticar Claude Code con tu cuenta Anthropic
-2. **Dependencias de hooks** (si los usas):
-   - `~/.vibe-island/bin/vibe-island-bridge` — instalar por separado
-   - `~/.pixel-agents/hooks/claude-hook.js` — instalar por separado
-3. **Atlassian Rovo / Google Drive** — se activan automáticamente tras login con la misma cuenta Claude.ai. Sin configuración local necesaria.
-4. **Plugins** (`context7`, `skill-creator`, `warp`) — se descargan al primer uso.
-5. **Obsidian MCP** (si lo usas) — configurar manualmente con tu ruta de vault:
+2. **Atlassian Rovo / Google Drive** — se activan automáticamente tras login con la misma cuenta Claude.ai. Sin configuración local necesaria.
+3. **Plugins** (`context7`, `skill-creator`, `warp`) — se descargan al primer uso.
+4. **Obsidian MCP** (si lo usas) — configurar manualmente con tu ruta de vault:
    ```bash
    claude mcp add obsidian -- npx @bitbonsai/mcpvault@latest /ruta/a/tu/vault
    ```
