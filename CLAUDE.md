@@ -44,3 +44,18 @@ When reporting a bug, the user will specify the file and function where the prob
 ## Multi-file Changes
 
 Before writing any code for changes that span multiple files, provide a numbered plan: 1) which files will be modified, 2) what change in each file, 3) any existing components to reuse. Wait for explicit approval before proceeding.
+
+## PDF Generation
+
+Para generar PDFs desde HTML (con soporte de Lucide icons, SVG inline, CSS personalizado):
+
+```bash
+npx pagedjs-cli input.html --output output.pdf
+```
+
+- **PagedJS CLI** es la herramienta correcta: implementa CSS Paged Media W3C, renderiza SVG, soporta `@page` y `page-break-inside`.
+- **Lucide icons**: siempre embeber los SVG paths inline directamente en el HTML. No usar el patrón `<symbol>/<use href="#...">` — WeasyPrint y otros motores no lo resuelven.
+- **No usar** Chrome headless `--print-to-pdf` (rechazado por el usuario).
+- **No usar** WeasyPrint directo para HTML con SVG icons (no resuelve `<use href>`).
+- **WeasyPrint + pandoc** solo sirve para Markdown → PDF sin íconos SVG.
+- Para tipografía sin íconos: `brew install --cask basictex` → habilita pandoc + xelatex.
