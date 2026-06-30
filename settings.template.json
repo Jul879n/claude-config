@@ -39,7 +39,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "npx tsc --noEmit --pretty 2>&1 | head -20",
+            "command": "[ -f tsconfig.json ] && npx tsc --noEmit --pretty 2>&1 | head -20 || true",
             "statusMessage": "Type-check after edits"
           }
         ]

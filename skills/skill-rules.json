@@ -1,12 +1,21 @@
 {
   "skills": {
-    "concise-output": {
+    "codigo-minimo": {
       "enforcement": "critical",
       "priority": "critical",
-      "description": "Mantener respuestas cortas y directas",
+      "description": "Escalera de código mínimo: YAGNI, reutilizar antes de crear, nunca recortar seguridad/accesibilidad",
       "promptTriggers": {
-        "keywords": ["*"],
-        "intentPatterns": [".*"]
+        "keywords": ["implement", "add", "create", "build", "write", "code", "feature", "function", "component", "script", "class", "hook", "module", "implementa", "agrega", "crea", "construye", "escribe", "codifica"],
+        "intentPatterns": ["(implementa|agrega|crea|construye|escribe|codifica|desarrolla)", "(add|create|build|implement|write).*(feature|function|component|hook|class|module|script)"]
+      }
+    },
+    "concise-output": {
+      "enforcement": "suggested",
+      "priority": "medium",
+      "description": "Mantener respuestas cortas y directas — principio en CLAUDE.md, no recarga automática",
+      "promptTriggers": {
+        "keywords": [],
+        "intentPatterns": []
       }
     },
     "brainstorming": {
@@ -64,12 +73,12 @@
       }
     },
     "reposynapse-explore": {
-      "enforcement": "suggest",
-      "priority": "high",
-      "description": "Explorar codebase con reposynapse MCP",
+      "enforcement": "critical",
+      "priority": "critical",
+      "description": "Explorar codebase con reposynapse MCP primero; fallback a Read/Grep si MCP falla",
       "promptTriggers": {
-        "keywords": ["explorar", "buscar", "encontrar", "busca", "explore", "search", "find", "donde esta", "where is"],
-        "intentPatterns": ["(buscar|explorar|encontrar).*?(codigo|archivo|funcion|clase)", "donde.*?(esta|está)", "(search|find).*?(in|code)"]
+        "keywords": ["explore", "search", "find", "look", "check", "where", "busca", "encuentra", "revisa", "dónde", "qué archivo", "explora", "navega"],
+        "intentPatterns": ["(find|search|look for|where is|explore|review).*(file|code|function|component|implementation)", "(busca|encuentra|explora|revisa).*(archivo|código|función|componente)"]
       }
     },
     "verification": {

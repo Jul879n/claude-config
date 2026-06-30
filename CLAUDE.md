@@ -37,6 +37,12 @@ This project has two WordPress themes that share customizations. When modifying 
 
 Before implementing a feature, check the existing codebase for reusable components. Do not create new components when existing ones (e.g., Select, Modal) can be reused.
 
+**Código mínimo**: YAGNI → stdlib → native → dep instalada → componente existente → una línea → mínimo que funcione. Nunca recortar seguridad, accesibilidad ni manejo real de errores.
+
+**Salida concisa**: respuestas cortas y directas. Mismo objetivo, menos palabras. Sin texto descriptivo innecesario.
+
+**Exploración con reposynapse**: al buscar/leer código, preferir `read_file_outline` → `read_file_symbol` → `search_symbol` antes que leer archivos completos.
+
 ## Bug Fixes
 
 When reporting a bug, the user will specify the file and function where the problem manifests. Always look there first before exploring other files. Do not modify other files without explaining why.
