@@ -6,19 +6,19 @@
       "description": "Escalera de código mínimo: YAGNI, reutilizar antes de crear, nunca recortar seguridad/accesibilidad",
       "promptTriggers": {
         "keywords": ["implement", "add", "create", "build", "write", "code", "feature", "function", "component", "script", "class", "hook", "module", "implementa", "agrega", "crea", "construye", "escribe", "codifica"],
-        "intentPatterns": ["(implementa|agrega|crea|construye|escribe|codifica|desarrolla)", "(add|create|build|implement|write).*(feature|function|component|hook|class|module|script)"]
+        "intentPatterns": [".*"]
       }
     },
     "concise-output": {
       "enforcement": "suggested",
       "priority": "medium",
-      "description": "Mantener respuestas cortas y directas — principio en CLAUDE.md, no recarga automática",
+      "description": "Mantener respuestas cortas y directas — principio en CLAUDE.md",
       "promptTriggers": {
         "keywords": [],
-        "intentPatterns": []
+        "intentPatterns": [".*"]
       }
     },
-    "brainstorming": {
+    "superpowers:brainstorming": {
       "enforcement": "suggest",
       "priority": "high",
       "description": "Antes de nueva feature, componente o trabajo creativo",
@@ -78,7 +78,7 @@
       "description": "Explorar codebase con reposynapse MCP primero; fallback a Read/Grep si MCP falla",
       "promptTriggers": {
         "keywords": ["explore", "search", "find", "look", "check", "where", "busca", "encuentra", "revisa", "dónde", "qué archivo", "explora", "navega"],
-        "intentPatterns": ["(find|search|look for|where is|explore|review).*(file|code|function|component|implementation)", "(busca|encuentra|explora|revisa).*(archivo|código|función|componente)"]
+        "intentPatterns": [".*"]
       }
     },
     "verification": {
@@ -99,7 +99,7 @@
         "intentPatterns": ["(simplificar|refactorizar).*?(archivo|codigo)", "archivo.*?grande", "codigo.*?(complejo|grande)"]
       }
     },
-    "systematic-debugging": {
+    "superpowers:systematic-debugging": {
       "enforcement": "suggest",
       "priority": "critical",
       "description": "Antes de proponer fixes, investigar causa raíz",
@@ -108,7 +108,7 @@
         "intentPatterns": ["(fix|arreglar|resolver).*?(bug|error|problema)", "no.*?funciona", "error.*?(en|when)", "(debug|debugging).*"]
       }
     },
-    "test-driven-development": {
+    "superpowers:test-driven-development": {
       "enforcement": "suggest",
       "priority": "high",
       "description": "Antes de implementar feature, escribir tests primero",
@@ -117,7 +117,7 @@
         "intentPatterns": ["(test|tests).*?(first|primero)", "antes.*?test", "escribir.*?test.*?antes"]
       }
     },
-    "writing-plans": {
+    "superpowers:writing-plans": {
       "enforcement": "suggest",
       "priority": "high",
       "description": "Antes de código, crear plan/especificación",
@@ -126,7 +126,7 @@
         "intentPatterns": ["(crear|escribir).*?(plan|spec|especificacion)", "antes.*?implementar"]
       }
     },
-    "requesting-code-review": {
+    "superpowers:requesting-code-review": {
       "enforcement": "suggest",
       "priority": "high",
       "description": "Antes de merge, solicitar code review",
@@ -135,7 +135,7 @@
         "intentPatterns": ["(solicitar|hacer).*?(code review|pr)", "listo.*?para.*?(merge|pr)", "acabado.*?(feature|implementacion)"]
       }
     },
-    "receiving-code-review": {
+    "superpowers:receiving-code-review": {
       "enforcement": "suggest",
       "priority": "high",
       "description": "Recibir feedback de code review con rigor técnico",
@@ -144,7 +144,7 @@
         "intentPatterns": ["(recibir|tener).*?(feedback|review|comentarios)", "cambios.*?solicitados"]
       }
     },
-    "finishing-a-development-branch": {
+    "superpowers:finishing-a-development-branch": {
       "enforcement": "suggest",
       "priority": "medium",
       "description": "Cuando implementación está completa, decidir integración",
